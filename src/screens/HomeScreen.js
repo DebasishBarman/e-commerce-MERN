@@ -1,11 +1,28 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
+// import axios from 'axios'
 import products from '../products'
+
+
 const HomeScreen = () => {
-    console.log(products)
+    // const [products,setProducts]=useState([])
+    // useEffect(()=>{
+    //     const fetchData=async()=>{
+    //         const {data}=await axios.get('http//127.0.0.1:3001/products');
+
+    //         // setProducts(
+    //         //     data.map()
+    //         // )
+
+            
+
+    //     }
+    //     fetchData()
+    // },[])
+
     return (
-        <>
+        <React.Fragment>
             <h1>Latest Products</h1>
             <Row>
                 {
@@ -19,7 +36,7 @@ const HomeScreen = () => {
                 }
             </Row>
 
-        </>
+        </React.Fragment>
     )
 }
 

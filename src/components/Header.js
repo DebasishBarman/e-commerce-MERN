@@ -4,7 +4,7 @@ import { Container, Navbar ,Nav} from 'react-bootstrap'
 
 const Header = () => {
     return (
-        <>      
+        <React.Fragment>      
             <Navbar bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">Reagent-Shop</Navbar.Brand>
@@ -14,7 +14,7 @@ const Header = () => {
                     </Nav>
                 </Container>
             </Navbar>
-        </>
+        </React.Fragment>
     )
 }
 
