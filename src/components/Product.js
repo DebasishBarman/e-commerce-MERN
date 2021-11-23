@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import Rating from './Rating'
 
 
 const Product = ({ product }) => {
@@ -12,10 +13,13 @@ const Product = ({ product }) => {
             </a>
             <Card.Body>
                 <a href={`/product/${product._id}`}>
-                    <Card.Title as='div'>{product.name}</Card.Title>
+                    <Card.Title as='div'>
+                        <strong>{product.name}</strong>
+                    </Card.Title>
                 </a>
                 <Card.Text as='div'>
                     <div className="my-3">
+                        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                         {product.rating} from {product.numReviews} reviews
                     </div>
                 </Card.Text>
