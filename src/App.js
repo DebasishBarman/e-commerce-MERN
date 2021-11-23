@@ -2,25 +2,38 @@
 import './App.css';
 import TodoForm from './components/TodoForm';
 import { Container } from 'react-bootstrap'
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header';
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+
 function App() {
   return (
     <>
-
-      {/* <TodoForm /> */}
+      {/* <Router>
+        <Routes>
+          <Header />
+          <main className="py-3">
+            <Container>
+              <Route path='/' exact component={HomeScreen} />
+            </Container>
+          </main>
+          <Footer />
+        </Routes>
+      </Router> */}
       <Header />
       <main className="py-3">
         <Container>
-           <HomeScreen/>
+          <Router>
+            <Routes>
+              <Route path='/' element={<HomeScreen />} />
+              <Route path='/product/:id' element={<ProductScreen />} />
+            </Routes>
+          </Router>
         </Container>
       </main>
-
-
       <Footer />
-
     </>
   );
 }
